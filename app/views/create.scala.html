@@ -1,0 +1,20 @@
+@(noticiaForm: Form[Noticia])
+@import helper._
+
+@main("Noticias") {
+    <h2>Nueva Noticia</h2>
+    @form(routes.Application.save()) {
+
+        <fieldset>
+            @inputText(noticiaForm("titulo"), '_label -> "Nombre de la noticia", '_help -> "")
+            @inputText(noticiaForm("descripcion"), '_label -> "Descripcion", '_help -> "")
+            @inputText(noticiaForm("enlace"),'_label -> "Fuente", '_help -> "")
+        </fieldset>
+
+        <div class="actions">
+            <input type="submit" value="Postear Noticia" class="btn primary">
+            <a href="@routes.Application.list()" class="btn">Cancelar</a>
+        </div>
+    }
+}
+

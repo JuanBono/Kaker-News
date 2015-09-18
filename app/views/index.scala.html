@@ -1,0 +1,6 @@
+@(listaNoticias: List[Noticia])
+@import helpers._
+
+@main("Noticias") {
+    @listaNoticias.map( n => cartaNoticia(n))
+}
