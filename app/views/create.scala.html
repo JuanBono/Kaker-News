@@ -6,14 +6,14 @@
     @form(routes.Application.save()) {
 
         <fieldset>
-            @inputText(noticiaForm("titulo"), '_label -> "Nombre de la noticia", '_help -> "")
-            @inputText(noticiaForm("descripcion"), '_label -> "Descripcion", '_help -> "")
-            @inputText(noticiaForm("enlace"),'_label -> "Fuente", '_help -> "")
+            @inputText(noticiaForm("titulo"), '_label ->  <span class="black-text ">Titulo</span>, '_help -> "")
+            @inputText(noticiaForm("descripcion"), '_label -> <span class="black-text ">Descripcion</span>, '_help -> "")
+            @inputText(noticiaForm("enlace"),'_label -> <span class="black-text ">Fuente</span>, '_help -> "")
         </fieldset>
 
         <div class="actions">
-            <input type="submit" value="Postear Noticia" class="btn primary">
-            <a href="@routes.Application.list()" class="btn">Cancelar</a>
+            <input type="submit" value="Postear Noticia" class="btn primary light-green">
+            <a href="@routes.Application.list()" class="btn light-green">Cancelar</a>
         </div>
     }
 }
