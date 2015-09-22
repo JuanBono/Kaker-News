@@ -3,11 +3,12 @@
 # ~~~~
 
 # Home page
-GET        /                    controllers.Application.list()
-POST       /                    controllers.Application.save()
+GET         /                    controllers.Application.list()
+POST        /                    controllers.Application.save()
+POST        /                    controllers.Usuarios.save()
 
-GET        /nueva               controllers.Application.create()
-
+GET         /nueva               controllers.Application.create()
+GET         /nuevoUsuario        controllers.Usuarios.create()
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)

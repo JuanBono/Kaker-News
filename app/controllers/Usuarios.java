@@ -5,6 +5,7 @@ import play.*;
 import play.data.Form;
 import play.mvc.*;
 import views.html.*;
+
 import java.util.List;
 
 public class Usuarios extends Controller {
@@ -18,8 +19,20 @@ public class Usuarios extends Controller {
     }
 
     public Result create() {
-        return TODO;
+        Form<Usuario> usuarioForm = Form.form(Usuario.class);
+        return ok(views.html.usuarios.create.render(usuarioForm));
     }
 
+
+    public Result save() {
+        Form<Usuario> usuarioForm = Form.form(Usuario.class).bindFromRequest();
+        if ( usuarioForm.hasErrors() ) {
+            return badRequest( views.html.usuarios.create.render(usuarioForm) );
+
+        } else {
+            usuarioForm.get().save();
+            return redirect(routes.Application.list());
+        }
+    }
 
 }
