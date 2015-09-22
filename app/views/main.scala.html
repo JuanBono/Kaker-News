@@ -13,17 +13,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <nav>
-        <div class="nav-wrapper orange darken-4">
-            <a href="#" class="brand-logo">Kaker News</a>
+        <div class="nav-wrapper teal">
+            <a href="#" class="brand-logo">Noticias</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="@routes.Application.list()">Ver</a></li>
                 <li><a href="@routes.Application.create()">Añadir</a></li>
-                <li><a href="collapsible.html">Contacto</a></li>
+                <li><a href="collapsible.html">Iniciar Sesión</a></li>
             </ul>
         </div>
     </nav>
-    @content
-    <body bgcolor="#ffe57f">
+    <body>
+        <div class="container">
+        @content
+        </div>
+    </body>
+
+    <body bgcolor="#e8eaf6">
             <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/materialize.js")" ></script>

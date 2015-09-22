@@ -1,20 +1,20 @@
 @(noticiaForm: Form[Noticia])
-@import helper._
+    @import helper._
 
-@main("Noticias") {
-    <h2>Nueva Noticia</h2>
-    @form(routes.Application.save()) {
+    @main("Noticias") {
+        <h2 >Nueva Noticia</h2>
+        @form(routes.Application.save()) {
 
-        <fieldset>
-            @inputText(noticiaForm("titulo"), '_label ->  <span class="black-text ">Titulo</span>, '_help -> "")
-            @inputText(noticiaForm("descripcion"), '_label -> <span class="black-text ">Descripcion</span>, '_help -> "")
-            @inputText(noticiaForm("enlace"),'_label -> <span class="black-text ">Fuente</span>, '_help -> "")
-        </fieldset>
+            <fieldset >
+                @inputText(noticiaForm("titulo"), '_label -> "Titulo", '_help -> "")
+                @inputText(noticiaForm("descripcion"), '_label -> "Descripcion", '_help -> "")
+                @inputText(noticiaForm("enlace"), '_label -> "Fuente", '_help -> "")
+            </fieldset>
 
-        <div class="actions">
-            <input type="submit" value="Postear Noticia" class="btn primary light-green">
-            <a href="@routes.Application.list()" class="btn light-green">Cancelar</a>
-        </div>
+            <div class="actions">
+                <input type="submit" value="Postear Noticia" class="btn primary">
+                <a href="@routes.Application.list()" class="btn">Cancelar</a>
+            </div>
+        }
     }
-}
 
