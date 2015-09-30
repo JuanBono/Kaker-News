@@ -1,12 +1,11 @@
 package controllers;
 
 import models.*;
-import play.*;
 import play.data.Form;
 import play.mvc.*;
 import views.html.*;
 
-import java.util.List;
+
 
 public class Usuarios extends Controller {
 
@@ -34,5 +33,4 @@ public class Usuarios extends Controller {
             return redirect(routes.Application.list());
         }
     }
-
 }

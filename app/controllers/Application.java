@@ -1,11 +1,11 @@
 package controllers;
 
 import models.Noticia;
-import play.*;
 import play.data.Form;
 import play.mvc.*;
 import views.html.*;
 
+import java.util.Date;
 import java.util.List;
 
 public class Application extends Controller {
@@ -33,6 +33,7 @@ public class Application extends Controller {
             return badRequest( create.render(noticiaForm) );
 
         } else {
+            noticiaForm.get().fecha = new Date();
             noticiaForm.get().save();
             return redirect(routes.Application.list());
         }

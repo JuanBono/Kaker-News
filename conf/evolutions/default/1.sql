@@ -6,8 +6,7 @@
 create table noticia (
   id                        bigint not null,
   titulo                    varchar(255),
-  descripcion               varchar(255),
-  imagen                    varchar(255),
+  usuario_id                bigint,
   enlace                    varchar(255),
   fecha                     timestamp,
   puntos                    bigint,
@@ -25,6 +24,8 @@ create sequence noticia_seq;
 
 create sequence usuario_seq;
 
+alter table noticia add constraint fk_noticia_usuario_1 foreign key (usuario_id) references usuario (id) on delete restrict on update restrict;
+create index ix_noticia_usuario_1 on noticia (usuario_id);
 
 
 
