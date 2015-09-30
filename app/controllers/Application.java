@@ -5,7 +5,6 @@ import play.*;
 import play.data.Form;
 import play.mvc.*;
 import views.html.*;
-import views.html.defaultpages.error;
 
 import java.util.List;
 

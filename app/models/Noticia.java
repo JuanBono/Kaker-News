@@ -19,9 +19,8 @@ public class Noticia extends Model {
     @Constraints.Required(message = "Requerido")
     public String titulo;
 
-    public String descripcion;
-
-    public String imagen;
+    @ManyToOne
+    public Usuario usuario;
 
     @Constraints.Required(message = "Requerido")
     public String enlace;
@@ -31,15 +30,10 @@ public class Noticia extends Model {
 
     public Long puntos;
 
+    // hay que agregar un posteador.
+
     // para las queries
     public static Finder<Long, Noticia> find = new Finder<Long, Noticia>(Noticia.class);
-
-    public String validate() {
-         if (descripcion.length() > 255) {
-             return "La descripcion puede tener como maximo 255 caracteres.";
-         }
-        return null;
-    }
 
 
 }

@@ -20,6 +20,9 @@ public class Usuario extends Model {
     public String password;
 
 
+    @OneToMany(mappedBy = "usuario")
+    public List<Noticia> noticias;
+
     // para las queries
     public static Finder<Long, Usuario> find = new Finder<Long, Usuario>(Usuario.class);
 
